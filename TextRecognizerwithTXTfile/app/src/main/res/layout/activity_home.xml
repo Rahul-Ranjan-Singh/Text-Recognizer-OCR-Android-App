@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimaryDark"
+    tools:context=".HomeActivity">
+
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/toolbar" />
+
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/choose_image_template"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="60dp"
+                android:background="@drawable/image_holder"
+                android:elevation="8dp"
+                android:foregroundGravity="center"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="8dp">
+
+                <ImageView
+                    android:id="@+id/image_placeholder"
+                    android:layout_width="200dp"
+                    android:layout_height="300dp"
+                    android:padding="25dp"
+                    android:src="@drawable/imagebackground" />
+
+            </androidx.cardview.widget.CardView>
+
+
+            <Button
+                android:id="@+id/start_recognizing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/click_image"
+                android:text="Start Recognizing"
+                android:textAllCaps="false" />
+
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/line" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/colorPrimaryDark"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                    <EditText
+                        android:id="@+id/text_holder"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/colorPrimaryDark"
+                        android:fontFamily="@font/baloo_bhai"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:text="Recognized text will be shown here"
+                        android:textColor="#FCFCFC" />
+                    
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/colorPrimaryDark"
+                        android:orientation="horizontal">
+
+
+                        <Button
+                            android:id="@+id/get_txt_file_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/get_txt_btn"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingLeft="23dp"
+                            android:paddingBottom="10dp"
+                            android:text="get TXT file"
+                            android:textAllCaps="false"
+                            android:textSize="9sp" />
+
+
+                        <Button
+                            android:id="@+id/google_search_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/google_search"
+                            android:foregroundGravity="center"
+                            android:gravity="center"
+                            android:paddingStart="12dp"
+                            android:paddingLeft="5dp"
+                            android:paddingBottom="10dp"
+                            android:text="search on Google"
+                            android:textAllCaps="false"
+                            android:textSize="12dp">
+
+                        </Button>
+
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/line" />
+
+
+            <Button
+                android:id="@+id/click_image_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/click_img"
+                android:paddingLeft="15dp"
+                android:text="Click Image"
+                android:textAllCaps="false" />
+
+            <Button
+                android:id="@+id/choose_image_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="80dp"
+                android:background="@drawable/select_gallery"
+                android:paddingLeft="15dp"
+                android:text="Select Image"
+                android:textAllCaps="false" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <FrameLayout
+        android:id="@+id/Home_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="0dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-3484960083569974/3514962816"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"></com.google.android.gms.ads.AdView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
